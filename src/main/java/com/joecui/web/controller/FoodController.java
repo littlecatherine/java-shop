@@ -18,26 +18,26 @@ public class FoodController {
 
     private final Logger logger = LoggerFactory.getLogger(FoodController.class);
 
-    private FoodService userService;
+    private FoodService foodService;
 
     @Autowired
-    public void setUserService(FoodService userService) {
-        this.userService = userService;
+    public void setFoodService(FoodService foodService) {
+        this.foodService = foodService;
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(Model model) {
         logger.debug("index()");
-        return "redirect:/users";
+        return "redirect:/foods";
     }
 
     // list page
-    @RequestMapping(value = "/users", method = RequestMethod.GET)
-    public String showAllUsers(Model model) {
+    @RequestMapping(value = "/foods", method = RequestMethod.GET)
+    public String showAllFoods(Model model) {
 
-        logger.debug("showAllUsers()");
-        model.addAttribute("users", userService.findAll());
-        return "users/list";
+        logger.debug("showAllFoods()");
+        model.addAttribute("foods", foodService.findAll());
+        return "foods/list";
 
     }
 
