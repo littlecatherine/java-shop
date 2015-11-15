@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.joecui.web</groupId>
-    <artifactId>spring-mvc-form</artifactId>
+    <artifactId>java-shop</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
     <name>SpringMVC + Form Handling Example</name>
@@ -56,11 +56,10 @@
             <version>${spring.version}</version>
         </dependency>
 
-        <!-- HyperSQL DB -->
         <dependency>
-            <groupId>org.hsqldb</groupId>
-            <artifactId>hsqldb</artifactId>
-            <version>${hsqldb.version}</version>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.9</version>
         </dependency>
 
         <!--Simple Logging Facade-->
@@ -114,7 +113,7 @@
                 <configuration>
                     <scanIntervalSeconds>10</scanIntervalSeconds>
                     <webApp>
-                        <contextPath>/spring-mvc-form</contextPath>
+                        <contextPath>/java-shop</contextPath>
                     </webApp>
                 </configuration>
             </plugin>
