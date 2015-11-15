@@ -1,10 +1,10 @@
 package com.joecui.web.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.joecui.web.dao.FoodDao;
 import com.joecui.web.entity.Food;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 @Service("foodService")
 public class FoodServiceImpl implements FoodService {
@@ -16,11 +16,9 @@ public class FoodServiceImpl implements FoodService {
         this.foodDao = foodDao;
     }
 
-
     @Override
     public List<Food> findAll() {
         return foodDao.findAll();
     }
-
 
 }

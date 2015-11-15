@@ -6,12 +6,6 @@ import java.util.List;
 
 public interface FoodService {
 
-//	User findById(Integer id);
-	
-	List<Food> findAll();
+    List<Food> findAll();
 
-//	void saveOrUpdate(User user);
-//
-//	void delete(int id);
-	
 }
