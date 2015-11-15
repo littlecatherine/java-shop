@@ -29,16 +29,16 @@ public class FoodController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(Model model) {
         logger.debug("index()");
-        return "redirect:/foods";
+        return "redirect:/food";
     }
 
     // list page
-    @RequestMapping(value = "/foods", method = RequestMethod.GET)
+    @RequestMapping(value = "/food", method = RequestMethod.GET)
     public String showAllFoods(Model model) {
 
         logger.debug("showAllFoods()");
         model.addAttribute("foods", foodService.findAll());
-        return "foods/list";
+        return "food/list";
 
     }
 
