@@ -39,10 +39,10 @@
                 <td>${food.image}</td>
                 <td>${food.name}</td>
                 <td>${food.price}</td>
-
-                <spring:url value="/food/${food.id}" var="foodUrl" />
-
-                <button class="btn btn-addtocart" onclick="location.href='${foodUrl}'">Add</button>
+                <td>
+                    <spring:url value="/food/${food.id}" var="foodUrl" />
+                    <button class="btn btn-addtocart" onclick="location.href='${foodUrl}'">Add</button>
+                </td>
             </tr>
         </c:forEach>
     </table>
