@@ -43,7 +43,7 @@ public class FoodDaoImpl implements FoodDao {
 			food.setId(rs.getInt("id"));
 			food.setImage(rs.getString("image"));
 			food.setName(rs.getString("name"));
-			food.setPrice(getInt("price"));
+			food.setPrice(rs.getInt("price"));
 			return food;
 		}
 	}
