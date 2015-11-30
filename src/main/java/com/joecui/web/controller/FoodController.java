@@ -20,6 +20,7 @@ public class FoodController {
     private final Logger logger = LoggerFactory.getLogger(FoodController.class);
 
     private FoodService foodService;
+//    private CartService cartService;
 
     @Autowired
     public void setFoodService(FoodService foodService) {
@@ -42,5 +43,14 @@ public class FoodController {
 
     }
 
+    // cart page
+    @RequestMapping(value = "/cart", method = RequestMethod.GET)
+    public String showCart(Model model) {
+
+        logger.debug("showCart()");
+//        model.addAttribute("cartDB", cartService.findAll());
+        return "food/cart";
+
+    }
 
 }
