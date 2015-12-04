@@ -1,6 +1,6 @@
 package com.joecui.web.dao;
 
-import com.joecui.web.entity.Cart;
+import com.joecui.web.entity.Food1;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.RowMapper;
@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 @Repository
-public class CartDaoImpl implements CartDao {
+public class Food1DaoImpl implements Food1Dao {
 
 	NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
@@ -23,24 +23,24 @@ public class CartDaoImpl implements CartDao {
 
 
 	@Override
-	public List<Cart> findAll() {
+	public List<Food1> findAll() {
 
-		String sql = "SELECT * FROM cart";
-		List<Cart> result = namedParameterJdbcTemplate.query(sql, new CartMapper());
+		String sql = "SELECT * FROM foods1";
+		List<Food1> result = namedParameterJdbcTemplate.query(sql, new Food1Mapper());
 
 		return result;
 
 	}
 
-	private static final class CartMapper implements RowMapper<Cart> {
+	private static final class Food1Mapper implements RowMapper<Food1> {
 
-		public Cart mapRow(ResultSet rs, int rowNum) throws SQLException {
-			Cart cart = new Cart();
-			cart.setId(rs.getInt("id"));
-			cart.setImage(rs.getString("image"));
-			cart.setName(rs.getString("name"));
-			cart.setPrice(rs.getInt("price"));
-			return cart;
+		public Food1 mapRow(ResultSet rs, int rowNum) throws SQLException {
+			Food1 food = new Food1();
+			food.setId(rs.getInt("id"));
+			food.setImage(rs.getString("image"));
+			food.setName(rs.getString("name"));
+			food.setPrice(rs.getInt("price"));
+			return food;
 		}
 	}
 

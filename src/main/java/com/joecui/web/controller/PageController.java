@@ -7,37 +7,37 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.joecui.web.entity.Cart;
-import com.joecui.web.service.FoodService;
-import com.joecui.web.service.CartService;
+
+//import com.joecui.web.service.FoodService;
+import com.joecui.web.service.Food1Service;
 
 // the old way of representing index page
 @Controller
-@RequestMapping("/")
+//@RequestMapping("/")
 public class PageController {
 
 	@Autowired
-	FoodService foodService;
-	CartService cartService;
+//	FoodService foodService;
+	Food1Service food1Service;
 
-	@RequestMapping(method = RequestMethod.GET)
-	public String getIndexPage() {
-	        return "food/oldlist";
-	    }
+//	@RequestMapping(method = RequestMethod.GET)
+//	public String getIndexPage() {
+//	        return "food/oldlist";
+//	    }
 
 	// list page
-	@RequestMapping(value = "/food", method = RequestMethod.GET)
-	public String showAllFoods(Model model) {
-		model.addAttribute("foods", foodService.findAll());
-		return "food/list";
+//	@RequestMapping(value = "/food", method = RequestMethod.GET)
+//	public String showAllFoods(Model model) {
+//		model.addAttribute("foods", foodService.findAll());
+//		return "food/list";
+//
+//	}
 
-	}
-
-	// cart page
-	@RequestMapping(value = "/cart", method = RequestMethod.GET)
+	// food1 page
+	@RequestMapping(value = "/food1", method = RequestMethod.GET)
 	public String showCart(Model model) {
-		model.addAttribute("cart", cartService.findAll());
-		return "food/cart";
+		model.addAttribute("food1", food1Service.findAll());
+		return "food/newlist";
 
 	}
 
