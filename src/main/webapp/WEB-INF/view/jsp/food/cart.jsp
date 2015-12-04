@@ -27,22 +27,25 @@
     <table class="table table-striped">
         <thead>
         <tr>
-            <th>Image</th>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Add to cart</th>
+            <th>Quantity</th>
         </tr>
         </thead>
 
-        <c:forEach var="food" items="${foods}">
+        <%--<c:forEach var="food" items="${foods}">--%>
+            <%--<tr>--%>
+                <%--<td>${food.image}</td>--%>
+                <%--<td>${food.name}</td>--%>
+                <%--<td>${food.price}</td>--%>
+                <%--<td>${cart.quantity}</td>--%>
+                <%--<td>--%>
+                    <%--<spring:url value="/food/${food.id}" var="foodUrl" />--%>
+                    <%--<button class="btn btn-addtocart" onclick="location.href='${foodUrl}'">Add</button>--%>
+                <%--</td>--%>
+            <%--</tr>--%>
+        <%--</c:forEach>--%>
+        <c:forEach var="cart" items="${cart}">
             <tr>
-                <td>${food.image}</td>
-                <td>${food.name}</td>
-                <td>${food.price}</td>
-                <td>
-                    <spring:url value="/food/${food.id}" var="foodUrl" />
-                    <button class="btn btn-addtocart" onclick="location.href='${foodUrl}'">Add</button>
-                </td>
+                <td>${cart.quantity}</td>
             </tr>
         </c:forEach>
     </table>

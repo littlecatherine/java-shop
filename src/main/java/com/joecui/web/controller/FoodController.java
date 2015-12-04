@@ -25,6 +25,7 @@ public class FoodController {
 //    private final Logger logger = LoggerFactory.getLogger(FoodController.class);
     @Autowired
     FoodService foodService;
+
 //    private CartService cartService;
 
 //    @Autowired
@@ -45,7 +46,7 @@ public class FoodController {
 
 
     // cart page
-    @RequestMapping(value = "/cart", method = RequestMethod.GET)
+    @RequestMapping(value = "/api", method = RequestMethod.GET)
     public String showCart(Model model) {
 
 //        logger.debug("showCart()");
