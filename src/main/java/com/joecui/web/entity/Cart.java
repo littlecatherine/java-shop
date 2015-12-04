@@ -1,6 +1,6 @@
 package com.joecui.web.entity;
 
-public class Food1 {
+public class Cart {
 
     Integer id;
 
