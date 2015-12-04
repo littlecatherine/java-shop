@@ -34,13 +34,13 @@ public class FoodController {
 
 
     // list page
-    @RequestMapping(value = "/food", method = RequestMethod.GET)
-    public ResponseEntity<List<Food>> listAllFoods() {
-        List<Food> foods = foodService.findAll();
-
-        return new ResponseEntity<List<Food>>(foods, HttpStatus.OK);
-
-    }
+//    @RequestMapping(value = "/food", method = RequestMethod.GET)
+//    public ResponseEntity<List<Food>> listAllFoods() {
+//        List<Food> foods = foodService.findAll();
+//
+//        return new ResponseEntity<List<Food>>(foods, HttpStatus.OK);
+//
+//    }
 
 
 
