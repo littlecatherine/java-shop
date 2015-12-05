@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service("foodService")
-public class FoodServiceImpl implements FoodService {
+@Service("catalogueService")
+public class CatalogueServiceImpl implements CatalogueService {
 
     FoodDao foodDao;
 

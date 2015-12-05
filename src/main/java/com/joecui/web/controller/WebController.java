@@ -7,19 +7,19 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.joecui.web.service.FoodService;
+import com.joecui.web.service.CatalogueService;
 import com.joecui.web.service.CartService;
 
 // the old way of representing index page
 @Controller
 @RequestMapping("/")
-public class PageController {
+public class WebController {
 
 	@Autowired
-	FoodService foodService;
+	CatalogueService catalogueService;
 	@RequestMapping(value = "/food", method = RequestMethod.GET)
 	public String showAllFoods(Model model) {
-		model.addAttribute("foodsitem", foodService.findAll());
+		model.addAttribute("foodsitem", catalogueService.findAll());
 		return "food/list";
 
 	}
@@ -28,7 +28,7 @@ public class PageController {
 	CartService cartService;
 	@RequestMapping(value = "/cart", method = RequestMethod.GET)
 	public String showCart(Model model) {
-		model.addAttribute("foodsitem", foodService.findAll());
+		model.addAttribute("foodsitem", catalogueService.findAll());
 		model.addAttribute("cartitem", cartService.findAll());
 		return "food/newcart";
 
