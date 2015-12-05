@@ -27,17 +27,16 @@
     <table class="table table-striped">
         <thead>
         <tr>
-            <th>Image</th>
-            <th>Name</th>
-            <th>Price</th>
+            <th>Uid</th>
+            <%--<th>Food_id</th>--%>
             <th>Quantity</th>
         </tr>
         </thead>
 
         <c:forEach var="cart" items="${cartitem}">
             <tr>
-                <td>${cart.cid}</td>
-                <td>${cart.food_id}</td>
+                <td>${cart.uid}</td>
+                <%--<td>${cart.food_id}</td>--%>
                 <td>${cart.quantity}</td>
             </tr>
         </c:forEach>

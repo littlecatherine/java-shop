@@ -2,18 +2,18 @@ package com.joecui.web.entity;
 
 public class Cart {
 
-    Integer cid;
+    Integer uid;
 
     Integer food_id;
 
     Integer quantity;
 
-    public Integer getCid() {
-        return cid;
+    public Integer getUid() {
+        return uid;
     }
 
-    public void setCid(Integer cid) {
-        this.cid = cid;
+    public void setUid(Integer uid) {
+        this.uid = uid;
     }
 
     public Integer getFood_id() {
