@@ -17,10 +17,10 @@ public class WebController {
 
 	@Autowired
 	CatalogueService catalogueService;
-	@RequestMapping(value = "/food", method = RequestMethod.GET)
+	@RequestMapping(value = "/catalogue", method = RequestMethod.GET)
 	public String showAllFoods(Model model) {
 		model.addAttribute("foodsitem", catalogueService.findAll());
-		return "food/list";
+		return "main/list";
 
 	}
 
@@ -30,7 +30,7 @@ public class WebController {
 	public String showCart(Model model) {
 		model.addAttribute("foodsitem", catalogueService.findAll());
 		model.addAttribute("cartitem", cartService.findAll());
-		return "food/newcart";
+		return "main/cart";
 
 	}
 
