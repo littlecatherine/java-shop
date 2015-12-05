@@ -20,6 +20,7 @@ public class FoodServiceImpl implements FoodService {
 
     @Override
     public List<Food> findAll() {
+//        System.out.print(foodDao.findAll());
         return foodDao.findAll();
     }
 

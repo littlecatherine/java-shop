@@ -2,49 +2,33 @@ package com.joecui.web.entity;
 
 public class Cart {
 
-    Integer id;
+    Integer cid;
 
-    String image;
+    Integer food_id;
 
-    String name;
+    Integer quantity;
 
-    Integer price;
-
-    public Integer getId() {
-        return id;
+    public Integer getCid() {
+        return cid;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setCid(Integer cid) {
+        this.cid = cid;
     }
 
-    public String getImage() {
-        return image;
+    public Integer getFood_id() {
+        return food_id;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setFood_id(Integer food_id) {
+        this.food_id = food_id;
     }
 
-    public String getName() {
-        return name;
+    public Integer getQuantity() {
+        return quantity;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
-
-    public Integer getPrice() {
-        return price;
-    }
-
-    public void setPrice(Integer price) {
-        this.price = price;
-    }
-
-    public boolean isNew() {
-        return (this.id == null);
-    }
-
-
 }

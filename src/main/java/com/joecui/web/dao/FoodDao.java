@@ -9,6 +9,4 @@ public interface FoodDao {
 
 	List<Food> findAll();
 
-
-
 }

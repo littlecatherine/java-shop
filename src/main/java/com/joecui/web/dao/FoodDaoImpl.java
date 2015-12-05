@@ -20,6 +20,7 @@ public class FoodDaoImpl implements FoodDao {
 
 	NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
+
 	@Autowired
 	public void setNamedParameterJdbcTemplate(NamedParameterJdbcTemplate namedParameterJdbcTemplate) throws DataAccessException {
 		this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
@@ -32,9 +33,11 @@ public class FoodDaoImpl implements FoodDao {
 		String sql = "SELECT * FROM foods";
 		List<Food> result = namedParameterJdbcTemplate.query(sql, new FoodMapper());
 
+//		System.out.print(result);
 		return result;
 
 	}
+
 
 	private static final class FoodMapper implements RowMapper<Food> {
 
@@ -44,6 +47,7 @@ public class FoodDaoImpl implements FoodDao {
 			food.setImage(rs.getString("image"));
 			food.setName(rs.getString("name"));
 			food.setPrice(rs.getInt("price"));
+//			System.out.print(food);
 			return food;
 		}
 	}

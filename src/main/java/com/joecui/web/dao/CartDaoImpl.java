@@ -36,10 +36,9 @@ public class CartDaoImpl implements CartDao {
 
 		public Cart mapRow(ResultSet rs, int rowNum) throws SQLException {
 			Cart cart = new Cart();
-			cart.setId(rs.getInt("id"));
-			cart.setImage(rs.getString("image"));
-			cart.setName(rs.getString("name"));
-			cart.setPrice(rs.getInt("price"));
+			cart.setCid(rs.getInt("cid"));
+			cart.setFood_id(rs.getInt("food_id"));
+			cart.setQuantity(rs.getInt("quantity"));
 			return cart;
 		}
 	}

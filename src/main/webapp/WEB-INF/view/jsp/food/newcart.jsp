@@ -22,29 +22,22 @@
         </div>
     </c:if>
 
-    <h1>My Cart</h1>
+    <h1>All Foods</h1>
 
     <table class="table table-striped">
         <thead>
         <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Price</th>
             <th>Quantity</th>
         </tr>
         </thead>
 
-        <%--<c:forEach var="food" items="${foods}">--%>
-            <%--<tr>--%>
-                <%--<td>${food.image}</td>--%>
-                <%--<td>${food.name}</td>--%>
-                <%--<td>${food.price}</td>--%>
-                <%--<td>${cart.quantity}</td>--%>
-                <%--<td>--%>
-                    <%--<spring:url value="/food/${food.id}" var="foodUrl" />--%>
-                    <%--<button class="btn btn-addtocart" onclick="location.href='${foodUrl}'">Add</button>--%>
-                <%--</td>--%>
-            <%--</tr>--%>
-        <%--</c:forEach>--%>
-        <c:forEach var="cart" items="${cart}">
+        <c:forEach var="cart" items="${cartitem}">
             <tr>
+                <td>${cart.cid}</td>
+                <td>${cart.food_id}</td>
                 <td>${cart.quantity}</td>
             </tr>
         </c:forEach>
