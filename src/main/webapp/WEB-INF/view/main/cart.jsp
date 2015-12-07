@@ -28,18 +28,16 @@
         <thead>
         <tr>
             <th>Uid</th>
-            <%--<th>Food_id</th>--%>
+            <th>Food_id</th>
             <th>Quantity</th>
         </tr>
         </thead>
 
-        <c:forEach var="cart" items="${cartitem}">
             <tr>
-                <td>${cart.uid}</td>
-                <%--<td>${cart.food_id}</td>--%>
+                <td>${cart.user_id}</td>
+                <td>${cart.food_id}</td>
                 <td>${cart.quantity}</td>
             </tr>
-        </c:forEach>
     </table>
 
 </div>

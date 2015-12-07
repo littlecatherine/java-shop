@@ -2,18 +2,24 @@ package com.joecui.web.entity;
 
 public class Cart {
 
-    Integer uid;
+    Integer id;
+
+    Integer user_id;
 
     Integer food_id;
 
     Integer quantity;
 
-    public Integer getUid() {
-        return uid;
+    public Integer getId() { return id; }
+
+    public void setId(Integer id) { this.id = id; }
+
+    public Integer getUser_id() {
+        return user_id;
     }
 
-    public void setUid(Integer uid) {
-        this.uid = uid;
+    public void setUser_id(Integer user_id) {
+        this.user_id = user_id;
     }
 
     public Integer getFood_id() {
@@ -30,5 +36,11 @@ public class Cart {
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
+    }
+
+    @Override
+    public String toString() {
+        return "Cart [id=" + id + ", user_id=" + user_id + ", food_id=" + food_id + "," +
+                " quantity=" + quantity + "]";
     }
 }
