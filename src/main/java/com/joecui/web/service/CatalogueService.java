@@ -8,4 +8,6 @@ public interface CatalogueService {
 
     List<Food> findAll();
 
+    Food findById(Integer id);
+
 }

@@ -9,6 +9,7 @@ public interface CartDao {
 
 	List<Cart> findAll();
 
+	Cart findById(Integer id);
 
 
 }
