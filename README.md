@@ -1,4 +1,19 @@
-# Joe's Online Food Store
+# Brief Reflection Report of Joe's Online Food Store
+## Understanding & Usage of Technologies
+
+#### Servlet JSP JSTL
+#### ORM JPA JDBC
+#### Web Service
+#### Version Control
+#### MVC
+
+## Learing & Problem solving
+#### don't change the requirements
+#### make big problem into small problems
+one thing at a time
+#### google things first but offical doc is better
+#### don't do everthing your self, talk to others
+#### have enough rest
 
 ## Application Brief Description
 Joe's Online Food Store lets you shop for numerous of foods and check your orders from anywhere that have internet. Browse and shop by category, check out Deals, make purchases, and check the status of your orders.
@@ -16,38 +31,4 @@ Customer visits the home page and selects a food category. Customer browses food
  ![confirm](https://raw.githubusercontent.com/sfpprxy/myhub/master/java-project/confirm.png)
  ![orders](https://raw.githubusercontent.com/sfpprxy/myhub/master/java-project/orders.png)
  
-## Customer
 
-#### Home - display
-  - Display category
-
-#### Food list - display
-  - Display foods
-  - Add foods to shopping cart
-
-#### Cart / cart - update
-  - Update foods quantities
-  - View summary of quantities and total price
-
-#### Checkout / payment - update
-  - View summary cost
-  - Fill address
-  - Using fictitious credit card details
-  - Place an order and make payment
-
-#### Confirmation / complete - display
-
-#### Orders - display
-  - View history orders
-
-#### Registration
-
-#### Login
-
-## Admin
-
-#### Order page
-  - View customers’ orders
-
-#### Food organization page
-  - Add, Delete, Update food
