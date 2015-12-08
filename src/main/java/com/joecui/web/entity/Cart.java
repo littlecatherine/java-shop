@@ -38,9 +38,13 @@ public class Cart {
         this.quantity = quantity;
     }
 
-    @Override
-    public String toString() {
-        return "Cart [id=" + id + ", user_id=" + user_id + ", food_id=" + food_id + "," +
-                " quantity=" + quantity + "]";
-    }
+//    @Override
+//    public String toString() {
+//        return "Cart [id=" + id + ", user_id=" + user_id + ", food_id=" + food_id + "," +
+//                " quantity=" + quantity + "]";
+//    }
+
+//    public String toString() {
+//        return  "ok" + quantity +;
+//    }
 }
