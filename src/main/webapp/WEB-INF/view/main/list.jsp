@@ -34,7 +34,7 @@
         </tr>
         </thead>
 
-        <c:forEach var="food" items="${foods}">
+        <c:forEach var="food" items="${foodsitem}">
             <tr>
                 <td>${food.image}</td>
                 <td>${food.name}</td>

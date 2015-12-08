@@ -4,8 +4,10 @@ import com.joecui.web.entity.Food;
 
 import java.util.List;
 
-public interface FoodService {
+public interface CatalogueService {
 
     List<Food> findAll();
+
+    Food findById(Integer id);
 
 }
