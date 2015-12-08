@@ -23,6 +23,7 @@ Customer visits the home page and selects a food category. Customer browses food
 
 ## Use-Case Diagram 
  ![use case diagram](https://raw.githubusercontent.com/sfpprxy/myhub/master/java-project/Use%20Case%20Diagram.png)
+ https://github.com/sfpprxy/java-shop/blob/master/README.md#use-case-diagram
  
 ## Wireframes
  ![food](https://raw.githubusercontent.com/sfpprxy/myhub/master/java-project/food.png)
