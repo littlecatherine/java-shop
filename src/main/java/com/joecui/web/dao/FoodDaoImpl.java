@@ -54,8 +54,6 @@ public class FoodDaoImpl implements FoodDao {
 		 * Food result = namedParameterJdbcTemplate.queryForObject( sql, params,
 		 * new BeanPropertyRowMapper<Food>());
 		 */
-//		System.out.println("LLL Dao");
-//		System.out.println(result);
 		return result;
 
 	}
@@ -66,8 +64,6 @@ public class FoodDaoImpl implements FoodDao {
 		String sql = "SELECT * FROM foods";
 		List<Food> result = namedParameterJdbcTemplate.query(sql, new FoodMapper());
 
-//		System.out.println("LLL List");
-//		System.out.println(result);
 		return result;
 
 	}
@@ -82,10 +78,6 @@ public class FoodDaoImpl implements FoodDao {
 			food.setName(rs.getString("name"));
 			food.setPrice(rs.getInt("price"));
 
-//			[id=1, image=image, name=milk, price=null]
-//			food.setPrice(rs.getInt("price"));
-
-//			System.out.print("FoodDaoImplMapper: "+food);
 			return food;
 		}
 	}

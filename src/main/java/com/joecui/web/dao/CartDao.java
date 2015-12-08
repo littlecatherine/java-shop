@@ -11,7 +11,5 @@ public interface CartDao {
 
 	Cart findById(Integer id);
 
-//	Integer testtype();
-
 
 }

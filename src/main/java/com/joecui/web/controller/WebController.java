@@ -28,8 +28,6 @@ public class WebController {
 
 	}
 
-//	@Autowired
-//	CatalogueService catalogueService;
 	@RequestMapping(value = "/catalogue/{id}", method = RequestMethod.GET)
 	public String showFood(@PathVariable("id") int id, Model model) {
 
@@ -55,7 +53,6 @@ public class WebController {
 
 		model.addAttribute("cartitem", cartService.findById(id));
 		model.addAttribute("foodsitem", cartService.merge(id));
-//		System.out.println("LLL Controller");
 //		return "main/list";
 		return null;
 

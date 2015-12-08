@@ -45,24 +45,15 @@ public class CartDaoImpl implements CartDao {
 		 * Food result = namedParameterJdbcTemplate.queryForObject( sql, params,
 		 * new BeanPropertyRowMapper<Food>());
 		 */
-//		System.out.println("LLL Dao");
-//		System.out.println("GGGG:" + result);
 		return result;
 
 	}
-
-//	@Override
-//z	public Integer testtype() {
-//		return 3344;
-//	}
 
 	@Override
 	public List<Cart> findAll() {
 
 		String sql = "SELECT * FROM cart";
 		List<Cart> result = namedParameterJdbcTemplate.query(sql, new CartMapper());
-
-//		System.out.println("RESULT:  " + result);
 		return result;
 
 	}
@@ -75,10 +66,6 @@ public class CartDaoImpl implements CartDao {
 			cart.setUser_id(rs.getInt("user_id"));
 			cart.setFood_id(rs.getInt("food_id"));
 			cart.setQuantity(rs.getInt("quantity"));
-//			System.out.println("cart.setUser_id: "+cart);
-//			System.out.println("CartDaoImplMapper: "+cart);
-
-//			System.out.println("GGGG:" + cart);
 			return cart;
 		}
 	}
