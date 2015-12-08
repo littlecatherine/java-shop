@@ -26,6 +26,7 @@ Customer visits the home page and selects a food category. Customer browses food
  ![use case diagram](https://raw.githubusercontent.com/sfpprxy/myhub/master/java-project/Use%20Case%20Diagram.png)
  
 ## Wireframes
+ See here: https://github.com/sfpprxy/java-shop/blob/master/README.md#wireframes
  ![food](https://raw.githubusercontent.com/sfpprxy/myhub/master/java-project/food.png)
  ![cart](https://raw.githubusercontent.com/sfpprxy/myhub/master/java-project/cart.png)
  ![checkout](https://raw.githubusercontent.com/sfpprxy/myhub/master/java-project/checkout.png)
