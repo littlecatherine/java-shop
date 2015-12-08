@@ -45,8 +45,8 @@ public class WebController {
 	@RequestMapping(value = "/cart", method = RequestMethod.GET)
 	public String showCart(Model model) {
 		model.addAttribute("cartitem", cartService.findAll());
-//		return "main/cart";
-		return null;
+		return "main/cart";
+//		return null;
 
 	}
 

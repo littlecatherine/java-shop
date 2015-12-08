@@ -46,10 +46,15 @@ public class CartDaoImpl implements CartDao {
 		 * new BeanPropertyRowMapper<Food>());
 		 */
 //		System.out.println("LLL Dao");
-//		System.out.println(result);
+//		System.out.println("GGGG:" + result);
 		return result;
 
 	}
+
+//	@Override
+//z	public Integer testtype() {
+//		return 3344;
+//	}
 
 	@Override
 	public List<Cart> findAll() {
@@ -72,6 +77,8 @@ public class CartDaoImpl implements CartDao {
 			cart.setQuantity(rs.getInt("quantity"));
 //			System.out.println("cart.setUser_id: "+cart);
 //			System.out.println("CartDaoImplMapper: "+cart);
+
+//			System.out.println("GGGG:" + cart);
 			return cart;
 		}
 	}
