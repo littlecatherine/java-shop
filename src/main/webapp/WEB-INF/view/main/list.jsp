@@ -41,7 +41,7 @@
                 <td>${food.price}</td>
                 <td>
                     <spring:url value="/food/${food.id}" var="foodUrl" />
-                    <button class="btn btn-addtocart" onclick="location.href='${foodUrl}'">Add</button>
+                    <button class="btn btn-primary" onclick="location.href='${foodUrl}'">Add</button>
                 </td>
             </tr>
         </c:forEach>

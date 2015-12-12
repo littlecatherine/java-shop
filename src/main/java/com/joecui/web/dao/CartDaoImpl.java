@@ -65,6 +65,8 @@ public class CartDaoImpl implements CartDao {
 			cart.setId(rs.getInt("id"));
 			cart.setUser_id(rs.getInt("user_id"));
 			cart.setFood_id(rs.getInt("food_id"));
+			cart.setFood_name(rs.getString("food_name"));
+			cart.setFood_price(rs.getInt("food_price"));
 			cart.setQuantity(rs.getInt("quantity"));
 			return cart;
 		}
