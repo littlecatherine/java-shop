@@ -44,10 +44,10 @@ public class Food {
         return (this.id == null);
     }
 
-//    @Override
-//    public String toString() {
-//        return "Food [id=" + id + ", image=" + image + ", name=" + name + ", " +
-//                "price=" + price + "]";
-//    }
+    @Override
+    public String toString() {
+        return "Food [id=" + id + ", image=" + image + ", name=" + name + ", " +
+                "price=" + price + "]";
+    }
 
 }

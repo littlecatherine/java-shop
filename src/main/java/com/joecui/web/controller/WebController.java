@@ -16,33 +16,42 @@ import com.joecui.web.service.CartService;
 @Controller
 @RequestMapping("/")
 public class WebController {
+
 	@Autowired
 	CartService cartService;
 	@Autowired
 	CatalogueService catalogueService;
+
 	@RequestMapping(value = "/catalogue", method = RequestMethod.GET)
 	public String showAllFoods(Model model) {
 		model.addAttribute("foodsitem", catalogueService.findAll());
-//		return "main/list";
-		return null;
+//		System.out.println(cartService.findAll());
+		return "main/list";
+//		return null;
 
 	}
 
 	@RequestMapping(value = "/catalogue/{id}", method = RequestMethod.GET)
 	public String showFood(@PathVariable("id") int id, Model model) {
 
-//		Food food = catalogueService.findById(id);
 		model.addAttribute("foodsitem", catalogueService.findById(id));
-		System.out.println("LLL Controller");
-//		return "main/list";
-		return null;
+		return "main/list";
+//		return null;
 
 	}
 
 
 	@RequestMapping(value = "/cart", method = RequestMethod.GET)
 	public String showCart(Model model) {
+		// TODO implement gettotalprice
 		model.addAttribute("cartitem", cartService.findAll());
+		System.out.println("before");
+		// TODO figure why next line gets bug: at least return a advanced Type rather than Interger or String
+		model.addAttribute("www", cartService.findById(1));
+		System.out.println("later");
+		// TODO next line works(fetch 1 row), so try add get set totalprice in to cart.java
+		System.out.println(cartService.findById(1));
+//		System.out.println(cartService.getTotalPrice());
 		return "main/cart";
 //		return null;
 
@@ -52,9 +61,8 @@ public class WebController {
 	public String showCartById(@PathVariable("id") int id, Model model) {
 
 		model.addAttribute("cartitem", cartService.findById(id));
-		model.addAttribute("foodsitem", cartService.merge(id));
-//		return "main/list";
-		return null;
+		return "main/list";
+//		return null;
 
 	}
 

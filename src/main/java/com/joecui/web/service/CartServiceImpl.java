@@ -26,19 +26,17 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public Food findByFoodId(Integer id) {
-        return foodDao.findById(id);
-    }
-
-    @Override
-    public String merge(Integer id) {
-        System.out.println("Into merge method: ");
-        return null;
-    }
-
-    @Override
     public List<Cart> findAll() {
         return cartDao.findAll();
+    }
+
+    @Override
+    public Integer getTotalPrice() {
+        Integer price = foodDao.findById(1).getPrice();
+        Integer quantity = cartDao.findById(1).getQuantity();
+        Integer toatl = price * quantity;
+
+        return toatl;
     }
 
 

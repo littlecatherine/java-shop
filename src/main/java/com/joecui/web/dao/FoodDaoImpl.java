@@ -54,6 +54,7 @@ public class FoodDaoImpl implements FoodDao {
 		 * Food result = namedParameterJdbcTemplate.queryForObject( sql, params,
 		 * new BeanPropertyRowMapper<Food>());
 		 */
+		System.out.println(result);
 		return result;
 
 	}

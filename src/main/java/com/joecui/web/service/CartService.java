@@ -9,10 +9,8 @@ public interface CartService {
 
     Cart findById(Integer id);
 
-    Food findByFoodId(Integer id);
-
-    String merge(Integer id);
-
     List<Cart> findAll();
+
+    Integer getTotalPrice();
 
 }
