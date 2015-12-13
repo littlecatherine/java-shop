@@ -22,7 +22,7 @@
         </div>
     </c:if>
 
-    <h1>All Foods</h1>
+    <h1>Foods Catalogue</h1>
 
     <table class="table table-striped">
         <thead>

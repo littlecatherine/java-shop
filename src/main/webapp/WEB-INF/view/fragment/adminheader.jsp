@@ -22,10 +22,8 @@
 		</div>
 		<div id="navbar">
 			<ul class="nav navbar-nav navbar-right">
-				<li class="active"><a href="${urlCart}">Shopping Cart</a></li>
-				<li class="active"><a href="${urlRegister}">Register</a></li>
-				<li class="active"><a href="${urlLogin}">Login</a></li>
-				<li class="active"><a href="${urlAdmin}">Admin</a></li>
+				<li class="active"><a href="${urlAdmin}">Manage Food</a></li>
+				<li class="active"><a href="${urlAdmin}">View Orders</a></li>
 			</ul>
 		</div>
 	</div>

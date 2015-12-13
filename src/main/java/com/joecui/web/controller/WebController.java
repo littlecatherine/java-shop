@@ -86,6 +86,7 @@ public class WebController {
 	@RequestMapping(value = "/users/add", method = RequestMethod.GET)
 	public String showAddUserForm(Model model) {
 
+		//TODO change to register
 
 		User user = new User();
 

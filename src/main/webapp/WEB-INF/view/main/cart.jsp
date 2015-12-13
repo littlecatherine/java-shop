@@ -23,7 +23,7 @@
         </div>
     </c:if>
 
-    <h1>All Foods</h1>
+    <h1>Shopping Cart</h1>
 
     <table class="table table-striped">
         <thead>
@@ -44,15 +44,28 @@
                 <td>
                     <spring:url value="/users/${user.id}/update" var="updateUrl" />
                     <spring:url value="/users/${user.id}/delete" var="deleteUrl" />
-                    <button class="btn btn-success" onclick="location.href='${updateUrl}'">Update</button>
-                    <button class="btn btn-danger" onclick="this.disabled=true;post('${deleteUrl}')">Delete</button>
+                    <button class="btn btn-success" onclick="location.href='${updateUrl}'">Update Quantity</button>
+                    <button class="btn btn-danger" onclick="this.disabled=true;post('${deleteUrl}')">Remove</button>
                 </td>
             </tr>
         </c:forEach>
+
     </table>
 
+
+    <table class="table table-striped">
+        <div class="row">
+            <label class="col-sm-2">Total Price:</label>
+            <div class="col-sm-10">${cart.food_price}</div>
+            <button class="btn btn-primary pull-right" onclick="location.href='${updateUrl}'">Checkout</button>
+
+        </div>
+
+    </table>
 </div>
 
+<%--<div class="container">--%>
+<%--</div>--%>
 <jsp:include page="../fragment/footer.jsp" />
 
 </body>
