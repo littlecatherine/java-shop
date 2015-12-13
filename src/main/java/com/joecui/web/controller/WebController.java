@@ -3,6 +3,8 @@ package com.joecui.web.controller;
 
 import com.joecui.web.entity.Cart;
 import com.joecui.web.entity.Food;
+import com.joecui.web.entity.User;
+import com.joecui.web.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,10 +19,7 @@ import com.joecui.web.service.CatalogueService;
 import com.joecui.web.service.CartService;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 // the old way of representing index page
 @Controller
@@ -31,6 +30,8 @@ public class WebController {
 	CartService cartService;
 	@Autowired
 	CatalogueService catalogueService;
+	@Autowired
+	UserService userService;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index(Model model) {
@@ -81,50 +82,67 @@ public class WebController {
 
 	}
 
-	// show cart update form
-	@RequestMapping(value = "/cart/{id}/update", method = RequestMethod.GET)
-	public String showUpdateCartForm(@PathVariable("id") int id, Model model) {
+	// show add user form
+	@RequestMapping(value = "/users/add", method = RequestMethod.GET)
+	public String showAddUserForm(Model model) {
 
 
-		Cart cart = cartService.findById(id);
-		model.addAttribute("userForm", cart);
+		User user = new User();
+
+		// set default value
+//		user.setName("mkyong123");
+//		user.setEmail("test@gmail.com");
+		//user.setPassword("123");
+		//user.setConfirmPassword("123");
+		model.addAttribute("userForm", user);
 
 		populateDefaultModel(model);
 
-		return "main/updatecart";
+		return "main/userform";
+
+	}
+
+	// show update form
+	@RequestMapping(value = "/users/{id}/update", method = RequestMethod.GET)
+	public String showUpdateUserForm(@PathVariable("id") int id, Model model) {
+
+		User user = userService.findById(id);
+		model.addAttribute("userForm", user);
+
+		populateDefaultModel(model);
+
+		return "main/userform";
 
 	}
 
 	// save or update user
-//	@RequestMapping(value = "/users", method = RequestMethod.POST)
-//	public String saveOrUpdateUser(@ModelAttribute("userForm") @Validated User user,
-//								   BindingResult result, Model model, final RedirectAttributes redirectAttributes) {
-//
-//		logger.debug("saveOrUpdateUser() : {}", user);
-//
-//		if (result.hasErrors()) {
-//			populateDefaultModel(model);
-//			return "users/userform";
-//		} else {
-//
-//			redirectAttributes.addFlashAttribute("css", "success");
-//			if(user.isNew()){
-//				redirectAttributes.addFlashAttribute("msg", "User added successfully!");
-//			}else{
-//				redirectAttributes.addFlashAttribute("msg", "User updated successfully!");
-//			}
-//
-//			userService.saveOrUpdate(user);
-//
-//			// POST/REDIRECT/GET
-//			return "redirect:/users/" + user.getId();
-//
-//			// POST/FORWARD/GET
-//			// return "user/list";
-//
-//		}
-//
-//	}
+	@RequestMapping(value = "/users", method = RequestMethod.POST)
+	public String saveOrUpdateUser(@ModelAttribute("userForm") @Validated User user,
+								   BindingResult result, Model model, final RedirectAttributes redirectAttributes) {
+
+		if (result.hasErrors()) {
+			populateDefaultModel(model);
+			return "users/userform";
+		} else {
+
+			redirectAttributes.addFlashAttribute("css", "success");
+			if(user.isNew()){
+				redirectAttributes.addFlashAttribute("msg", "User added successfully!");
+			}else{
+				redirectAttributes.addFlashAttribute("msg", "User updated successfully!");
+			}
+
+			userService.saveOrUpdate(user);
+
+			// POST/REDIRECT/GET
+			return "redirect:/users/" + user.getId();
+
+			// POST/FORWARD/GET
+			// return "user/list";
+
+		}
+
+	}
 
 	private void populateDefaultModel(Model model) {
 
