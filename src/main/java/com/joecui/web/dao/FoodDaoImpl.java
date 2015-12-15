@@ -78,6 +78,7 @@ public class FoodDaoImpl implements FoodDao {
 			food.setImage(rs.getString("image"));
 			food.setName(rs.getString("name"));
 			food.setPrice(rs.getInt("price"));
+			food.setQuantity(rs.getInt("quantity"));
 
 			return food;
 		}

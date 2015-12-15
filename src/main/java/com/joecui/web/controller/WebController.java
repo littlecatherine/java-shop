@@ -48,7 +48,7 @@ public class WebController {
 	}
 
 	// save or update user
-	@RequestMapping(value = "/users", method = RequestMethod.POST)
+	@RequestMapping(value = "/catalogue", method = RequestMethod.POST)
 	public String saveOrUpdateUser(@ModelAttribute("userForm") @Validated User user,
 								   BindingResult result, Model model, final RedirectAttributes redirectAttributes) {
 
@@ -64,7 +64,7 @@ public class WebController {
 				redirectAttributes.addFlashAttribute("msg", "User updated successfully!");
 			}
 
-			userService.saveOrUpdate(user);
+//			userService.saveOrUpdate(user);
 
 			// POST/REDIRECT/GET
 			return "redirect:/users/" + user.getId();
@@ -73,6 +73,19 @@ public class WebController {
 			// return "user/list";
 
 		}
+
+	}
+
+	// show update form
+	@RequestMapping(value = "/catalogue/{id}/add", method = RequestMethod.GET)
+	public String showUpdateUserForm(@PathVariable("id") int id, Model model) {
+
+		Food food = foodDao.findById(id);
+		model.addAttribute("quantityForm", food);
+
+		populateDefaultModel(model);
+
+		return "main/addquantity";
 
 	}
 
