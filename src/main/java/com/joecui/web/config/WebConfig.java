@@ -12,8 +12,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan({ "com.joecui.web.controller", "com.joecui.web.service", "com.joecui.web.dao",
-		"com.joecui.web.exception", "com.joecui.web.validator" })
+@ComponentScan(basePackages = "com.joecui.web")
 public class WebConfig extends WebMvcConfigurerAdapter {
 
 	@Override
@@ -25,7 +24,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 	public InternalResourceViewResolver viewResolver() {
 		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
 		viewResolver.setViewClass(JstlView.class);
-		viewResolver.setPrefix("/WEB-INF/view/jsp/");
+		viewResolver.setPrefix("/WEB-INF/view/");
 		viewResolver.setSuffix(".jsp");
 		return viewResolver;
 	}

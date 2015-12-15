@@ -10,9 +10,17 @@ public class Food {
 
     Integer price;
 
-    public Integer getId() {
-        return id;
+    Integer quantity;
+
+    public Integer getQuantity() {
+        return quantity;
     }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
+    public Integer getId() { return id; }
 
     public void setId(Integer id) {
         this.id = id;
@@ -46,5 +54,10 @@ public class Food {
         return (this.id == null);
     }
 
+    @Override
+    public String toString() {
+        return "Food [id=" + id + ", image=" + image + ", name=" + name + ", " +
+                "price=" + price + "]";
+    }
 
 }
