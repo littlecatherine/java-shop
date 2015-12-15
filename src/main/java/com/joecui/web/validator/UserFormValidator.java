@@ -1,7 +1,7 @@
 package com.joecui.web.validator;
 
 import com.joecui.web.entity.User;
-import com.joecui.web.service.UserService;
+//import com.joecui.web.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -17,8 +17,8 @@ public class UserFormValidator implements Validator {
 	@Qualifier("emailValidator")
 	EmailValidator emailValidator;
 
-	@Autowired
-	UserService userService;
+//	@Autowired
+//	UserService userService;
 
 	@Override
 	public boolean supports(Class<?> clazz) {

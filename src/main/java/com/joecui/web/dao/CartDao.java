@@ -11,5 +11,6 @@ public interface CartDao {
 
 	Cart findById(Integer id);
 
+	void save(Cart cart);
 
 }

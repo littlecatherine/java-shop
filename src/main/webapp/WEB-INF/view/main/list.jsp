@@ -27,6 +27,7 @@
     <table class="table table-striped">
         <thead>
         <tr>
+            <th>ID</th>
             <th>Image</th>
             <th>Name</th>
             <th>Price</th>
@@ -36,12 +37,13 @@
 
         <c:forEach var="food" items="${foodsitem}">
             <tr>
+                <td>${food.id}</td>
                 <td>${food.image}</td>
                 <td>${food.name}</td>
                 <td>${food.price}</td>
                 <td>
-                    <spring:url value="/food/${food.id}" var="foodUrl" />
-                    <button class="btn btn-primary" onclick="location.href='${foodUrl}'">Add</button>
+                    <spring:url value="/catalogue/${food.id}/add" var="addUrl" />
+                    <button class="btn btn-primary" onclick="location.href='${addUrl}'">Add</button>
                 </td>
             </tr>
         </c:forEach>
